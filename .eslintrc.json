@@ -1,0 +1,41 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": ["airbnb-typescript/base", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": ["node_modules/"],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": 2,
+    "@typescript-eslint/typedef": [
+      "error",
+      {
+        "arrayDestructuring": false,
+        "arrowParameter": false,
+        "memberVariableDeclaration": true,
+        "objectDestructuring": false,
+        "parameter": true,
+        "propertyDeclaration": true,
+        "variableDeclaration": false
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": 1,
+    "@typescript-eslint/camelcase": 0,
+    "@typescript-eslint/no-empty-interface": 0,
+
+    "no-underscore-dangle": "off",
+
+    "curly": "error",
+    "import/extensions": 2,
+    "consistent-return": 0,
+    "import/no-unresolved": 0,
+    "import/prefer-default-export": 0,
+    "max-classes-per-file": 0,
+    "no-shadow": 0,
+    "no-param-reassign": ["error", { "props": false }],
+    "no-alert": 0,
+    "no-undef": 0
+  }
+}
