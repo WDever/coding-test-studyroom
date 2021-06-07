@@ -9,20 +9,17 @@ function isPrime(num: number): boolean {
 
   let result = false;
 
+  let breakFor = false;
+
   for (let i = 2; i <= Math.floor(Math.sqrt(num)); i += 1) {
-    console.log(`start : ${result}`);
-    if (num % i === 0) {
+    if (!breakFor && num % i === 0) {
       result = false;
-      console.log(`first IF : ${result}`);
-      break;
+      breakFor = true;
     }
 
-    if (num % i !== 0) {
+    if (!breakFor && num % i !== 0) {
       result = true;
-      console.log(`second IF : ${result}`);
     }
-
-    console.log(`end : ${result}`);
   }
 
   return result;
@@ -66,5 +63,6 @@ function solution(nums: number[]): number {
 
 console.log(solution([1, 2, 3, 4]));
 console.log(solution([1, 2, 7, 6, 4]));
+console.log(solution([2, 4, 6, 8, 9]));
 
-// export {};
+export {};

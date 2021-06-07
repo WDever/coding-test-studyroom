@@ -9,12 +9,15 @@ function isPrime(num) {
 
   let result = false;
 
+  let breakFor = false;
+
   for (let i = 2; i <= Math.floor(Math.sqrt(num)); i += 1) {
-    if (num % i === 0) {
+    if (!breakFor && num % i === 0) {
       result = false;
+      breakFor = true;
     }
 
-    if (num % i !== 0) {
+    if (!breakFor && num % i !== 0) {
       result = true;
     }
   }
