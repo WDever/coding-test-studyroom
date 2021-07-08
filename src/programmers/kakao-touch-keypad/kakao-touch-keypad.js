@@ -45,3 +45,5 @@ function solution(numbers, hand) {
 
   return answer;
 }
+
+export {};
